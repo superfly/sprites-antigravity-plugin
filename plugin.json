@@ -2,5 +2,5 @@
   "name": "sprites-antigravity-plugin",
   "version": "0.1.0",
   "description": "Adds hosted Sprites MCP access, safety guardrails, and reusable Sprite workflows for Antigravity CLI.",
-  "repository": "https://github.com/fly-apps/sprites-antigravity-plugin"
+  "repository": "https://github.com/superfly/sprites-antigravity-plugin"
 }

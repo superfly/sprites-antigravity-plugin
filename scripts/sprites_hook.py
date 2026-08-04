@@ -14,7 +14,6 @@ import re
 import sys
 from typing import Any
 
-
 # Destructive or irreversible Sprite operations. Matched against the serialized
 # tool call, so these fire whether the MCP tool name is bare (`destroy_sprite`)
 # or server-prefixed (`sprites__destroy_sprite`).
