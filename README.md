@@ -4,6 +4,21 @@ Use Sprites from Antigravity CLI (`agy`) as persistent, isolated Linux developme
 
 The Sprites Plugin gives Antigravity reusable Sprites workflows, safety guardrails, and convenient commands for common development tasks.
 
+## Usage attribution
+
+The plugin adds two fixed [`client-signals`](https://github.com/superfly/client-signals)
+headers to its hosted MCP requests so the traffic can be identified as
+Antigravity plugin traffic:
+
+- `Fly-Client-Agent: antigravity`
+- `Fly-Client-Interactive: false`
+
+Both are constants in the plugin config. They carry nothing about you, your
+machine, or your repository. Fly uses them for aggregate traffic reporting only,
+not for authentication, authorization, gating, or rate-limiting. See
+[docs/attribution.md](docs/attribution.md) for what the values mean and what
+they cannot measure.
+
 ## What You Can Do
 
 - Create fresh, named Sprites for risky changes, experiments, or preview environments.
