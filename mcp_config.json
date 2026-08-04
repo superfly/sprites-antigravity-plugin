@@ -1,7 +1,11 @@
 {
   "mcpServers": {
     "sprites": {
-      "serverUrl": "https://sprites.dev/mcp"
+      "serverUrl": "https://sprites.dev/mcp",
+      "headers": {
+        "Fly-Client-Interactive": "false",
+        "Fly-Client-Agent": "antigravity"
+      }
     }
   }
 }
