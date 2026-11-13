@@ -45,11 +45,19 @@ Install from the repository:
 agy plugin install https://github.com/superfly/sprites-antigravity-plugin
 ```
 
-Then open Antigravity's MCP manager with `/mcp` and authenticate the `sprites` server. Use restricted access unless your workflow needs broader organization control.
+Then open Antigravity's MCP manager with `/mcp` and authenticate the `sprites` server. The plugin connects it to the hosted Fly MCP at `https://mcp.fly.io`, which signs you in through your browser. On the consent screen, pick the organization and the Sprites permissions to grant. Use restricted access (a name prefix and a Sprite limit) unless your workflow needs broader organization control.
+
+The same consent screen can also grant access to Fly apps, Machines, volumes, secrets, and Managed Postgres. This plugin's commands and skills only use the Sprites tools, so you can leave the rest ungranted.
+
+### Upgrading from the `sprites.dev/mcp` endpoint
+
+Earlier versions of this plugin connected to `https://sprites.dev/mcp`. We are transitioning to the new Fly MCP server at `https://mcp.fly.io`. The two endpoints keep separate OAuth grants, so after updating the plugin you need to authorize once more: open `/mcp`, select the `sprites` server, and authenticate again. The server name and the Sprites tool names are unchanged.
 
 ## Safety
 
 Sprites are stateful environments, so the Sprites Plugin nudges Antigravity to be careful around actions that can affect durable state. It asks for confirmation before destructive operations such as destroying Sprites, restoring checkpoints, deleting checkpoints, or widening service/network exposure. It also prompts for checkpoints before risky commands like migrations, package upgrades, and broad filesystem changes.
+
+These guardrails cover the Sprites tools only. If you grant other Fly products at consent, tools such as `delete_app`, `delete_machine`, or `delete_volume` are not covered by the plugin's hooks; rely on Antigravity's own tool approvals for those.
 
 ## Optional Hooks
 

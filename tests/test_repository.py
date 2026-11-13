@@ -30,8 +30,8 @@ class AntigravityPluginRepositoryTests(unittest.TestCase):
         server = config["mcpServers"]["sprites"]
         parsed = urlparse(server["serverUrl"])
         self.assertEqual(parsed.scheme, "https")
-        self.assertEqual(parsed.netloc, "sprites.dev")
-        self.assertEqual(parsed.path, "/mcp")
+        self.assertEqual(parsed.netloc, "mcp.fly.io")
+        self.assertIn(parsed.path, {"", "/"})
 
     def test_commands_have_matching_skills(self) -> None:
         command_names = {path.stem for path in (ROOT / "commands/sprites").glob("*.toml")}

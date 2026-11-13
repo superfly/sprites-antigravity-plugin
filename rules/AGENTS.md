@@ -2,7 +2,8 @@
 
 These rules apply when using Sprites from Antigravity.
 
-- Prefer the hosted Sprites MCP server named `sprites`; do not build or invoke a local Sprites MCP bridge.
+- Prefer the hosted Fly MCP server (`https://mcp.fly.io`) configured as `sprites`; do not build or invoke a local Sprites MCP bridge.
+- The `sprites` server can also expose non-Sprites Fly tools (apps, Machines, volumes, secrets, Managed Postgres) when the user granted them. Stay with the Sprites tools unless the user asks for those explicitly.
 - Treat Sprites as persistent, stateful Linux microVMs. Changes to files, packages, databases, checkpoints, services, and network policy can outlive the current Antigravity session.
 - Prefer restricted OAuth access and a clear name prefix such as `mcp-` for agent-created Sprites.
 - Before destructive work, identify the Sprite by exact name and create or verify a recent checkpoint.

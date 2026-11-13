@@ -5,12 +5,12 @@ description: Use when working with Sprites from Antigravity, including creating 
 
 # Sprites
 
-Use the hosted Sprites MCP server configured as `sprites`. Do not build, scaffold, or run a local MCP server for Sprites.
+Use the hosted Fly MCP server (`https://mcp.fly.io`) configured as `sprites`. It can also expose non-Sprites Fly tools when the user granted them; stay with the Sprites tools unless the user asks for those explicitly. Do not build, scaffold, or run a local MCP server for Sprites.
 
 ## Core Principles
 
 - Sprites are persistent, isolated Linux microVMs. Treat them as durable environments, not disposable one-shot shells.
-- Use a restricted Sprites OAuth token and a clear prefix such as `mcp-` unless the user explicitly needs broader organization access.
+- Use a restricted Sprites grant and a clear prefix such as `mcp-` unless the user explicitly needs broader organization access.
 - Prefer fresh Sprites for experiments and risky generated code.
 - Create or verify a recent checkpoint before package upgrades, migrations, bulk filesystem edits, service rewrites, network policy changes, or destructive cleanup.
 - Ask before destroying Sprites, restoring checkpoints, widening network/resource/privilege policies, or making a service public.
